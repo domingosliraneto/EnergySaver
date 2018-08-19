@@ -1,0 +1,35 @@
+<ion-content padding>
+  <!-- <div align="center">
+    <h3> Olá <strong class="textcolor-preto">Domingos</strong>, hoje voce pode economizar <strong class="textcolor-verde">R$700,00</strong>, desejá continuar com a avaliação?</h3>
+  </div> -->
+  <ion-list>
+    <button ion-item menuToggle>
+      <ion-icon name="ios-list-box-outline" item-start></ion-icon>
+    </button>
+  </ion-list>
+  <div align="center">
+    <br>
+    <h3> Olá <strong class="textcolor-preto">Domingos</strong>, obrigado por confiar na Energy Saver,
+    para continuar com a avaliação, basta seguir o passo a passo demostrado nos slides.
+    </h3>
+  </div>
+
+  <div *ngIf="srcImage" class="image-wrapper">
+      <img id="image" [src]="srcImage"/>
+      <button ion-button icon-left block (click)="analyze()" color="light">
+        <ion-icon name="search"></ion-icon>
+        Iniciar
+      </button>
+      <button ion-button icon-left block (click)="restart()" color="light">
+        <ion-icon name="refresh"></ion-icon>
+        Buscar Outra Imagem
+      </button>
+  </div>
+
+  <div>
+    <canvas #barCanvas></canvas>
+  </div>
+  <button class="select-image" ion-button block *ngIf="!srcImage" (click)="presentActionSheet()" color="light">
+    <ion-icon name="camera"></ion-icon>
+  </button>
+</ion-content>
